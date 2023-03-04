@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QoaJcis1er8Yy1elBTRrpDJty3caJasfHoi5JyOkMdf6D7SDL3rboBcm/72yzG23mgzd7dAmIQyuDltsGF2/mw==",
+  "dgSpecHash": "VTVwmgB+vbVCB5ARhFDFJz+AuGCtpBq3q9nGsHZj02SwN7OK1qIM5RYs9GuUvIsSXMNAWDvUaUGEzvxgiTzgpQ==",
   "success": true,
-  "projectFilePath": "/media/duyaiti/Project/C#/essay-se-dotnetfw/essay-se-dotnetfw.csproj",
+  "projectFilePath": "/media/duyaiti/Project/essay-se-dotnetfw/essay-se-dotnetfw.csproj",
   "expectedPackageFiles": [
     "/home/duyaiti/.nuget/packages/microsoft.aspnetcore.openapi/7.0.3/microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "/home/duyaiti/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

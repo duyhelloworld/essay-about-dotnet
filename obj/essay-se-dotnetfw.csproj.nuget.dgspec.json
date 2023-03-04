@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/duyaiti/Project/C#/essay-se-dotnetfw/essay-se-dotnetfw.csproj": {}
+    "/media/duyaiti/Project/essay-se-dotnetfw/essay-se-dotnetfw.csproj": {}
   },
   "projects": {
-    "/media/duyaiti/Project/C#/essay-se-dotnetfw/essay-se-dotnetfw.csproj": {
+    "/media/duyaiti/Project/essay-se-dotnetfw/essay-se-dotnetfw.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/duyaiti/Project/C#/essay-se-dotnetfw/essay-se-dotnetfw.csproj",
+        "projectUniqueName": "/media/duyaiti/Project/essay-se-dotnetfw/essay-se-dotnetfw.csproj",
         "projectName": "essay-se-dotnetfw",
-        "projectPath": "/media/duyaiti/Project/C#/essay-se-dotnetfw/essay-se-dotnetfw.csproj",
+        "projectPath": "/media/duyaiti/Project/essay-se-dotnetfw/essay-se-dotnetfw.csproj",
         "packagesPath": "/home/duyaiti/.nuget/packages/",
-        "outputPath": "/media/duyaiti/Project/C#/essay-se-dotnetfw/obj/",
+        "outputPath": "/media/duyaiti/Project/essay-se-dotnetfw/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/duyaiti/.nuget/NuGet/NuGet.Config"
