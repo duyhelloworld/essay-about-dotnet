@@ -51,9 +51,6 @@
 /media/duyaiti/Project/essay-se-dotnetfw/bin/Debug/net7.0/ZstdNet.dll
 /media/duyaiti/Project/essay-se-dotnetfw/bin/Debug/net7.0/MySql.Data.EntityFramework.dll
 /media/duyaiti/Project/essay-se-dotnetfw/bin/Debug/net7.0/BouncyCastle.Crypto.dll
-/media/duyaiti/Project/essay-se-dotnetfw/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
-/media/duyaiti/Project/essay-se-dotnetfw/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
-/media/duyaiti/Project/essay-se-dotnetfw/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /media/duyaiti/Project/essay-se-dotnetfw/bin/Debug/net7.0/System.CodeDom.dll
 /media/duyaiti/Project/essay-se-dotnetfw/bin/Debug/net7.0/System.Configuration.ConfigurationManager.dll
 /media/duyaiti/Project/essay-se-dotnetfw/bin/Debug/net7.0/System.Data.SqlClient.dll
