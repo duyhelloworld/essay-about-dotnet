@@ -42,13 +42,13 @@
               "target": "Package",
               "version": "[7.0.3, )"
             },
-            "MySql.Data.EntityFramework": {
+            "MySql.Data": {
               "target": "Package",
               "version": "[8.0.31, )"
             },
-            "MySql.EntityFrameworkCore": {
+            "MySql.Data.EntityFramework": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[8.0.31, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

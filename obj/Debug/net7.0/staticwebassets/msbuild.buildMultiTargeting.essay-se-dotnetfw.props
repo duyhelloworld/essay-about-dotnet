@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/essay-se-dotnetfw.props" />
+</Project>
