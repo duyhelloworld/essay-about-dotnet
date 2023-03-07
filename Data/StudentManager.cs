@@ -1,4 +1,6 @@
+using System.Threading.Tasks;
 using essay_se_dotnetfw.Models;
+using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 
 namespace essay_se_dotnetfw.Data {
@@ -51,7 +53,7 @@ public class StudentManager
             _conn.Open();
             command.Parameters.AddWithValue("@id", id);
 
-            using MySqlDataReader reader = command.ExecuteReader();
+            using MySqlDataReader reader = command.ExecuteReader(); 
             if (reader.Read())
             {
                 _conn.Close();

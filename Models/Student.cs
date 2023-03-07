@@ -20,4 +20,9 @@ public class Student
     }
 
     public Student() { }
+
+    public static implicit operator Task<object>(Student v)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -11,3 +11,26 @@ CREATE TABLE students (
 );
 
 INSERT INTO `students` VALUES(DEFAULT, "Pham", "Duy", "2003/12/10", "mail@gmail", "Ha Dong");
+
+INSERT INTO `students` VALUES(DEFAULT, "Anh", "Hoang", "2003/12/02", "no-mail@gmail", "Ha Dong");
+INSERT INTO `students`
+VALUES
+(
+        DEFAULT,
+        "Do",
+        "Dat",
+        "2003/12/10",
+        "mail@gmail",
+        "Ha Nam");
+INSERT INTO `students`
+VALUES
+(
+        DEFAULT,
+        "Ngyen",
+        "Duy",
+        "2004/12/10",
+        "mail@gmail",
+        "Ha Noi"
+    );
+
+);

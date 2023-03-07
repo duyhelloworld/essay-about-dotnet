@@ -8,9 +8,9 @@ namespace essay_se_dotnetfw.Controllers;
 
 // http://localhost:{PORT}/api/student
 
-[ApiController]
+// [ApiController]
 // Mark it is a API Controller
-[Route("/api/[controller]")]
+// [Route("/api/[controller]")]
 // URL of controller
 public class StudentController : ControllerBase
 {
@@ -27,10 +27,10 @@ public class StudentController : ControllerBase
         return _manager.GetAllStudents();
     }
 
-    [HttpGet("{id:int}")]
-    public ActionResult<Student> GetStudentById(int id)
+    [HttpGet("{studentId}")]
+    public ActionResult<Student> GetStudentById(int studentId)
     {
-        var student = _manager.GetStudent(id);
+        var student = _manager.GetStudent(studentId);
 
         if (student == null)
             return NotFound();

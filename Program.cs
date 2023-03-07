@@ -8,13 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Logging.AddJsonConsole();
+// builder.Logging.AddJsonConsole();
 // builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 app.UseRouting();
 
-var apiUrl = "api/student";
+var apiUrl = "/api/student";
 StudentManager _manager = new("server=localhost;port=3306;database=ASP_web_empty;user=duyaiti;password=12345678");
 // app.MapControllerRoute(
 //     name: "student",
@@ -22,14 +22,14 @@ StudentManager _manager = new("server=localhost;port=3306;database=ASP_web_empty
 //     defaults: new {controller = "Student", action = "GetStudentById"}
 // );
 
-app.MapGet(apiUrl + "/{studentId}", (int studentId) => {
-    Console.WriteLine("Mapped to Here");
+app.MapGet(apiUrl + "/{studentId}", ([FromBody] int studentId) => {
+    Console.WriteLine("Mapped to One");
     var student = _manager.GetStudent(studentId);
     if(student is null) {
         Console.WriteLine("Not found student " + studentId);
-        return Results.NotFound();
+        Results.NotFound();
     }
-    return Results.Json(student, null, "application/json", 200);
+    return Results.Json(student);
 });
 
 app.MapGet(apiUrl, () => 
@@ -39,13 +39,23 @@ app.MapGet(apiUrl, () =>
     }
 );
 
-app.MapPost("/", (Student student) =>
-{
-    _manager.AddStudent(student);
-});
+// app.MapPost("/", (Student student) =>
+// {
+//     _manager.AddStudent(student);
+// });
 
-app.MapPut("/{id}", (int id, Student input) =>
+// app.MapPut("/{id}", (int id, Student input) =>
+// {
+//     return Results.NoContent();
+// });
+
+app.MapDelete(apiUrl + "/{id}", (int id) =>
 {
+    System.Console.WriteLine("Map to Del");
+    var student = _manager.GetStudent(id);
+    if(student is null)
+        return Results.NotFound();
+    _manager.DeleteStudent(id);
     return Results.NoContent();
 });
 

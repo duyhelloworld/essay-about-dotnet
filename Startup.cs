@@ -17,8 +17,9 @@ namespace essay_se_dotnetfw {
         {
             string? connectionString = Configuration.GetConnectionString("DefaultConnection");
 
-            // services.AddSingleton(new StudentManager(connectionString));
+            services.AddSingleton(new StudentManager(connectionString));
             services.AddTransient(provider => new StudentManager(connectionString));
+            services.AddScoped<StudentManager>();
             services.AddControllers();
         }
 
@@ -38,7 +39,7 @@ namespace essay_se_dotnetfw {
                 //     name:  "default",
                 //     pattern: "api/{controller}/{action}/{id?}"
                 // );
-                endpoints.MapControllers();
+                // endpoints.MapControllers();
             });
         }
     }
