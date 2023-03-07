@@ -32,5 +32,3 @@ VALUES
         "mail@gmail",
         "Ha Noi"
     );
-
-);

@@ -1,6 +1,5 @@
-using System.Threading.Tasks;
+using System.Data;
 using essay_se_dotnetfw.Models;
-using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 
 namespace essay_se_dotnetfw.Data {
@@ -21,7 +20,10 @@ public class StudentManager
 
             using (MySqlCommand command = new(query, _conn))
             {
-                _conn.Open();
+                if (_conn.State != ConnectionState.Open)
+                {
+                    _conn.Open();
+                }
 
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {

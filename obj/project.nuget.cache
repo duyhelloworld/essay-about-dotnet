@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NuXLSL42+dpQvUM9dsdhDi/hDyQhofngtffYS3uQZKUCHutA/JFIvBJrsTtCpKQSeyC1TChXPurOyvQgkjkfAg==",
+  "dgSpecHash": "Vug3HluOjZYTemlD1hVYn7t7et+lC+Wpu0UZ/hBn9sVhUgo/YzyfMX+3G4Skn95mhiZLZOcQNOZVJGGBDUQwpA==",
   "success": true,
   "projectFilePath": "/media/duyaiti/Project/essay-se-dotnetfw/essay-se-dotnetfw.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,6 @@
     "/home/duyaiti/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/home/duyaiti/.nuget/packages/mysql.data/8.0.31/mysql.data.8.0.31.nupkg.sha512",
     "/home/duyaiti/.nuget/packages/mysql.data.entityframework/8.0.31/mysql.data.entityframework.8.0.31.nupkg.sha512",
-    "/home/duyaiti/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512",
     "/home/duyaiti/.nuget/packages/portable.bouncycastle/1.9.0/portable.bouncycastle.1.9.0.nupkg.sha512",
     "/home/duyaiti/.nuget/packages/runtime.native.system.data.sqlclient.sni/4.7.0/runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "/home/duyaiti/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

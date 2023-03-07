@@ -10,7 +10,7 @@ public class Student
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
     // [JsonProperty(nameof(dateOfBirth))]
-    public string DateOfBirth { get; set; }
+    public string? DateOfBirth { get; set; }
     public string? Email { get; set; }
     public string? Address { get; set; }
     public Student(int id, string firstName, string lastName, string dob, string email, string address)

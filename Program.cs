@@ -5,10 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllers();
-// builder.Logging.AddJsonConsole();
-// builder.Services.AddEndpointsApiExplorer();
+// builder.Services.AddControllers();
 // builder.Services.AddCors(options =>
 // {
 //     options.AddPolicy(name: "AllPolicy",
@@ -19,34 +16,23 @@ builder.Services.AddControllers();
 // });
 
 var app = builder.Build();
-app.UseRouting();
 // app.UseCors("AllPolicy");
+// app.MapGet("/hello", (HttpContext ctx) => $"Hello {ctx.Request.Query["name"]}!");
 
-
-var apiUrl = "/api/student";
+string apiUrl = "/api/student";
 StudentManager _manager = new("server=localhost;port=3306;database=ASP_web_empty;user=duyaiti;password=12345678");
-// app.MapControllerRoute(
-//     name: "student",
-//     pattern: apiUrl + "/{studentId}",
-//     defaults: new {controller = "Student", action = "GetStudentById"}
-// );
+var mapper = new Mapper(_manager);
 
-app.MapGet(apiUrl + "/{studentId}", ([FromBody] int studentId) => {
-    Console.WriteLine("Mapped to One");
-    var student = _manager.GetStudent(studentId);
-    if(student is null) {
-        Console.WriteLine("Not found student " + studentId);
-        Results.NotFound();
+// app.MapGet(apiUrl, mapper.GetAllStudents);
+// app.MapGet(apiUrl + "/{id:int}", mapper.GetStudentById);
+
+app.MapGet(apiUrl + "/{id?}", ([FromQuery(Name = "id")] int? id) => {
+    if(id.HasValue) {
+        return mapper.GetStudentById((int)id);
+    } else {
+        return mapper.GetAllStudents();
     }
-    return Results.Json(student);
 });
-
-app.MapGet(apiUrl, () => 
-    {
-        Console.WriteLine("Mapped to All");
-        return Results.Json(_manager.GetAllStudents());
-    }
-);
 
 app.MapPost(apiUrl, (Student student) =>
 {
@@ -59,7 +45,7 @@ app.MapPost(apiUrl, (Student student) =>
 //     return Results.NoContent();
 // });
 
-app.MapDelete(apiUrl + "/{id}", (int id) =>
+app.MapDelete(apiUrl, (int id) =>
 {
     System.Console.WriteLine("Map to Del");
     var student = _manager.GetStudent(id);
@@ -69,6 +55,6 @@ app.MapDelete(apiUrl + "/{id}", (int id) =>
     return Results.NoContent();
 });
 
-app.UseAuthorization();
-app.MapControllers();
+// app.UseAuthorization();
+// app.MapControllers();
 app.Run();

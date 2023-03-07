@@ -49,10 +49,6 @@
             "MySql.Data.EntityFramework": {
               "target": "Package",
               "version": "[8.0.31, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.2, )"
             }
           },
           "imports": [
