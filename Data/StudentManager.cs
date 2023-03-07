@@ -20,54 +20,51 @@ public class StudentManager
 
             using (MySqlCommand command = new(query, _conn))
             {
-                if (_conn.State != ConnectionState.Open)
-                {
+                if (_conn.State != ConnectionState.Open) {
                     _conn.Open();
                 }
-
-                using (MySqlDataReader reader = command.ExecuteReader())
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
                 {
-                    while (reader.Read())
-                    {
-                        students.Add(new Student
-                        (
-                            reader.GetInt32("id"),
-                            reader.GetString("fname"),
-                            reader.GetString("lname"),
-                            reader.GetString("dob"),
-                            reader.GetString("email"),
-                            reader.GetString("address")
-                        ));
-                    }
+                    students.Add(new Student
+                    (
+                        reader.GetInt32("id"),
+                        reader.GetString("fname"),
+                        reader.GetString("lname"),
+                        reader.GetString("dob"),
+                        reader.GetString("email"),
+                        reader.GetString("address")
+                    ));
                 }
-
-                _conn.Close();
+                if(_conn.State != ConnectionState.Closed) {
+                    _conn.Close();
+                }
             }
-
             return students;
         }
 
         public Student? GetStudent(int id)
         {
-            string query = "SELECT * FROM students WHERE id = @id";
 
-            using MySqlCommand command = new(query, _conn);
             _conn.Open();
-            command.Parameters.AddWithValue("@id", id);
+            string query = "SELECT * FROM students WHERE id = @Id";
+            MySqlCommand command = new(query, _conn);
 
-            using MySqlDataReader reader = command.ExecuteReader(); 
+            command.Parameters.AddWithValue("@Id", id);
+
+            MySqlDataReader reader = command.ExecuteReader(); 
             if (reader.Read())
             {
-                _conn.Close();
-                return new Student
+                Student std = new Student
                 (
-                    reader.GetInt32("id"),
+                    id,
                     reader.GetString("fname"),
                     reader.GetString("lname"),
                     reader.GetString("dob"),
                     reader.GetString("email"),
                     reader.GetString("address")
                 );
+                return std;
             }
             return null;
         }

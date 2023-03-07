@@ -1,6 +1,6 @@
 using essay_se_dotnetfw.Data;
 
-namespace essay_se_dotnetfw {
+namespace essay_se_dotnetfw.Data {
     public class Mapper
     {
         private StudentManager _manager = new("");
@@ -13,10 +13,8 @@ namespace essay_se_dotnetfw {
             return Results.Json(_manager.GetAllStudents());
         }
 
-        public IResult GetStudentById(int id)
+        public IResult GetStudentById(int studentId)
         {
-            // int studentId = Int32.Parse(id);
-            int studentId = id;
             Console.WriteLine("Mapped to One with id = " + studentId);
 
             var student = _manager.GetStudent(studentId);
