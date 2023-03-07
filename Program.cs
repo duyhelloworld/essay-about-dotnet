@@ -5,14 +5,23 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 // Add services to the container.
 builder.Services.AddControllers();
 // builder.Logging.AddJsonConsole();
 // builder.Services.AddEndpointsApiExplorer();
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy(name: "AllPolicy",
+//         policy =>
+//         {
+//             policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials();
+//         });
+// });
 
 var app = builder.Build();
 app.UseRouting();
+// app.UseCors("AllPolicy");
+
 
 var apiUrl = "/api/student";
 StudentManager _manager = new("server=localhost;port=3306;database=ASP_web_empty;user=duyaiti;password=12345678");
@@ -39,10 +48,11 @@ app.MapGet(apiUrl, () =>
     }
 );
 
-// app.MapPost("/", (Student student) =>
-// {
-//     _manager.AddStudent(student);
-// });
+app.MapPost(apiUrl, (Student student) =>
+{
+    _manager.AddStudent(student);
+    return Results.Created($"/api/student/{student.Id}", student);
+});
 
 // app.MapPut("/{id}", (int id, Student input) =>
 // {

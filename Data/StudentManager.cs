@@ -32,7 +32,7 @@ public class StudentManager
                             reader.GetInt32("id"),
                             reader.GetString("fname"),
                             reader.GetString("lname"),
-                            reader.GetDateTime("dob"),
+                            reader.GetString("dob"),
                             reader.GetString("email"),
                             reader.GetString("address")
                         ));
@@ -62,7 +62,7 @@ public class StudentManager
                     reader.GetInt32("id"),
                     reader.GetString("fname"),
                     reader.GetString("lname"),
-                    reader.GetDateTime("dob"),
+                    reader.GetString("dob"),
                     reader.GetString("email"),
                     reader.GetString("address")
                 );
