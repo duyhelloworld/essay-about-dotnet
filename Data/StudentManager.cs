@@ -73,21 +73,26 @@ public class StudentManager
         {
             string query = "INSERT INTO students (fname, lname, dob,  email, address) VALUES (@fname, @lname, @dob, @email, @address)";
 
-            using MySqlCommand command = new(query, _conn);
+            MySqlCommand command = new(query, _conn);
             command.Parameters.AddWithValue("@fname", student.FirstName);
             command.Parameters.AddWithValue("@lname", student.LastName);
             command.Parameters.AddWithValue("@dob", student.DateOfBirth);
             command.Parameters.AddWithValue("@email", student.Email);
             command.Parameters.AddWithValue("@address", student.Address);
 
-            _conn.Open();
+            if(_conn.State != ConnectionState.Open){
+                _conn.Open();
+            }
 
             command.ExecuteNonQuery();
 
-            _conn.Close();
+            if (_conn.State != ConnectionState.Closed)
+            {
+                _conn.Close();
+            }
         }
 
-        public Boolean UpdateStudent(Student student)
+        public void UpdateStudent(Student student)
         {
             string query = "UPDATE student SET fname = @fname, lname = @lname, dob = @dob, email = @email, address = @address WHERE id = @id";
             using MySqlCommand command = new(query, _conn);
@@ -98,16 +103,18 @@ public class StudentManager
             command.Parameters.AddWithValue("@email", student.Email);
             command.Parameters.AddWithValue("@address", student.Address);
 
-            _conn.Open();
+            if (_conn.State != ConnectionState.Open)
+            {
+                _conn.Open();
+            }
 
             int rowAffected = command.ExecuteNonQuery();
-            _conn.Close();
-
-            if (rowAffected == 1)
+            
+            if (_conn.State != ConnectionState.Closed)
             {
-                return true;
+                _conn.Close();
             }
-            return false;
+
         }
 
         public void DeleteStudent(int id)
