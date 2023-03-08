@@ -1,5 +1,3 @@
-using essay_se_dotnetfw.Data;
-
 namespace essay_se_dotnetfw.Data {
     public class Mapper
     {
@@ -9,7 +7,7 @@ namespace essay_se_dotnetfw.Data {
         }
         public IResult GetAllStudents()
         {
-            Console.WriteLine("Mapped to All");
+            Console.WriteLine("Mapped to All"); 
             return Results.Json(_manager.GetAllStudents());
         }
 
