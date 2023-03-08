@@ -5,7 +5,7 @@ CREATE TABLE students (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fname VARCHAR(50),
     lname VARCHAR(50),
-    dob DATE NOT NULL,
+    dob VARCHAR(10),
     email VARCHAR(20),
     address VARCHAR(50)
 );

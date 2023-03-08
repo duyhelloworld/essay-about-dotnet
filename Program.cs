@@ -38,8 +38,6 @@ app.MapPost(apiUrl, (Student student) =>
 app.MapPut(apiUrl, ([FromBody] Student input) =>
 {
     Console.WriteLine("Map to Put");
-    // if (id != input.Id)
-    //     return Results.BadRequest();
     var student = _manager.GetStudent(input.Id);
 
     if (student is null) {
@@ -52,7 +50,6 @@ app.MapPut(apiUrl, ([FromBody] Student input) =>
 app.MapDelete(apiUrl, ([FromQuery(Name = "id")] int id) =>
 {
     Console.WriteLine("Map to Del");
-    
     var student = _manager.GetStudent(id);
 
     if(student is null)
